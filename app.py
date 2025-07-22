@@ -12,9 +12,7 @@ KEYSPACE_NAME = "gestao_co2"
 
 # Nomes de todas as suas coleções
 ALL_COLLECTIONS = [
-    "cidade", "emissor", "estado", "especie", "funcionario", "localizacao", "organizacao", "tipo_emissor",
-    "cidades_por_emissor", "emissores_por_cidade", "emissores_por_organizacao", "organizacoes_por_estado",
-    "vegetacao_por_emissor", "vegetacao_por_localizacao"
+    "cidade", "emissor", "estado", "especie", "funcionario", "localizacao", "organizacao", "tipo_emissor", "emissores_por_cidade", "organizacoes_por_estado"
 ]
 
 # Inicializa o cliente de conexão
@@ -58,9 +56,6 @@ if modo == "Consultas Específicas":
         "Buscar Emissores por Cidade": ("cidade", "emissores_por_cidade", "id_cidade"),
         "Buscar Cidades por Emissor": ("emissor", "cidades_por_emissor", "id_emissor"),
         "Buscar Organizações por Estado": ("estado", "organizacoes_por_estado", "id_estado"),
-        "Buscar Emissores por Organização": ("organizacao", "emissores_por_organizacao", "id_organizacao"),
-        "Buscar Vegetação por Localização": ("localizacao", "vegetacao_por_localizacao", "id_local"),
-        "Buscar Vegetação por Emissor": ("emissor", "vegetacao_por_emissor", "id_emissor"),
     }
     
     consulta_escolhida = st.sidebar.selectbox("Selecione o tipo de consulta:", query_map.keys())
